@@ -15,6 +15,7 @@
     //Removes the element at an Index
     removeAt()
 
+    //Adds and element at and index
     addAt()
 
     indexOf()
@@ -82,6 +83,27 @@ class LinkedList {
       currentNode.next = currentNode.next.next;
     }
   }
+
+  addAt(data, index){
+    let node = new Node(data);
+    if(index === 0){
+      node.next = this.head;
+      this.head = node;
+    } else {
+      let currentIndex = 0;
+      let currentNode = this.head;
+
+      while (currentIndex < index - 1) {
+        currentNode = currentNode.next;
+        currentIndex++;
+      }
+      //loop breaks in the node before the target index
+
+      //Jump over the next node, which is the node at the index
+      node.next = currentNode.next;
+      currentNode.next = node;
+    }
+  }
 }
 
 class Node {
@@ -102,5 +124,5 @@ myLinkedList.append(5);
 //0  1    2  3
 //3, 2, , 1, 5
 
-myLinkedList.removeAt(2);
+myLinkedList.addAt(16, 1);
 myLinkedList.printList();
