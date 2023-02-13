@@ -12,6 +12,7 @@
     Adds a node to the end of the linkedlist
     append()
 
+    //Removes the element at an Index
     removeAt()
 
     addAt()
@@ -34,7 +35,7 @@ class LinkedList {
   prepend(data){
     let node = new Node(data);
     //If we have an empty LinkedList
-    if(this.head === null && this.tail === null){
+    if(this.head === null){
       this.head = node; 
       this.tail = node;
     } else {
@@ -44,12 +45,41 @@ class LinkedList {
     }
   }
 
+  append(data){
+    let node = new Node(data);
+    if(this.head === null){
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+  }
+
   printList(){
     let currentNode = this.head;
 
     while(currentNode != null){
       console.log(currentNode.data);
       currentNode = currentNode.next;
+    }
+  }
+
+  removeAt(index){
+    if(index === 0){
+      this.head = this.head.next;
+    } else {
+      let currentIndex = 0;
+      let currentNode = this.head;
+
+      while (currentIndex < index - 1) {
+        currentNode = currentNode.next;
+        currentIndex++;
+      }
+      //loop breaks in the node before the target index
+
+      //Jump over the next node, which is the node at the index
+      currentNode.next = currentNode.next.next;
     }
   }
 }
@@ -66,7 +96,11 @@ const myLinkedList = new LinkedList();
 myLinkedList.prepend(1);
 myLinkedList.prepend(2);
 myLinkedList.prepend(3);
+myLinkedList.append(5);
+// myLinkedList.printList();
+
+//0  1    2  3
+//3, 2, , 1, 5
+
+myLinkedList.removeAt(2);
 myLinkedList.printList();
-// console.log(myLinkedList);
-// myLinkedList.append(3);
-// myLinkedList.display();
