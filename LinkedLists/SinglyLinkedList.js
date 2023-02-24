@@ -119,10 +119,6 @@ myLinkedList.prepend(1);
 myLinkedList.prepend(2);
 myLinkedList.prepend(3);
 myLinkedList.append(5);
-// myLinkedList.printList();
-
-//0  1    2  3
-//3, 2, , 1, 5
 
 myLinkedList.addAt(16, 1);
 myLinkedList.printList();
