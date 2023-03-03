@@ -2,14 +2,19 @@ const testCases = [
   {
     input: {
       arr: [
-        [1, 2, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11, 12],
-        [13, 14, 15, 16],
+        /*
+        Note that we're dealing with an array where
+        every row is sorted and every column is sorted.
+        But the array itself is not strictly sorted.
+        */
+        [10, 20, 30, 40],
+        [15, 25, 35, 45],
+        [28, 29, 37, 49],
+        [33, 34, 38, 50],
       ],
-      target: 9
+      target: 37
     },
-    output: [1, 1]
+    output: [2, 2]
   }
 ]
 
