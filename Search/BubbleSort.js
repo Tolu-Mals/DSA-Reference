@@ -4,6 +4,12 @@ const testCases = [
   [4, 2, 3, 1, 0],
 ];
 
+/*
+  Time Complexity:
+    Best Case: O(N) - The array is already sorted
+    Worst Case: O(N²) - Reverse sorted array
+  Space Complexity: O(1)
+*/
 const bubble = (arr) => {
   let swapped = false;
   for(let i = 1; i < arr.length; i++){

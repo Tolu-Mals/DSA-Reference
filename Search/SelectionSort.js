@@ -4,6 +4,10 @@ const testCases = [
   [4, 2, 3, 10, 0],
 ];
 
+/*
+  Time Complexity: O(N²)
+  Space Complexity: O(1)
+*/
 const getMax = (arr, start, end) => {
   let max = start; 
 
@@ -19,6 +23,9 @@ const getMax = (arr, start, end) => {
 const swapWithEnd = (arr, start, end) => {
   const max = getMax(arr, start, end);
 
+  //A little optimization, don't swap if the value is already at the corerct position
+  if(max === end) return;
+
   let temp = arr[end];
   arr[end] = arr[max];
   arr[max] = temp;
@@ -26,7 +33,6 @@ const swapWithEnd = (arr, start, end) => {
 
 const selection = (arr) => {
   for(let i = 1; i < arr.length; i++){
-    // const max = getMax(arr, 0, arr.length - i);
     swapWithEnd(arr, 0, arr.length - i);
   }
 };
