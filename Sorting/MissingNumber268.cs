@@ -1,3 +1,6 @@
+/*
+  Asked in Amazon
+*/
 public class Solution {
     public int MissingNumber(int[] nums) {
       sort(nums);

@@ -1,6 +1,7 @@
 /**
  * @param {number[]} nums
  * @return {number}
+ * Asked In Amazon
  */
 var missingNumber = function(nums) {
   sort(nums);

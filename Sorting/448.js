@@ -1,6 +1,7 @@
 /**
  * @param {number[]} nums
  * @return {number[]}
+ * Asked in Google
  */
 var findDisappearedNumbers = function(nums) {
   let result = [];
